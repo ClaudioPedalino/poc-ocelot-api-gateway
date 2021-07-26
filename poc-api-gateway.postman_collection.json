@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "b36b24c7-44e2-4eed-a173-1f094bd62e15",
+		"name": "poc-api-gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "book_api",
+			"item": [
+				{
+					"name": "/api/Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{book-api}}/api/Books",
+							"host": [
+								"{{book-api}}"
+							],
+							"path": [
+								"api",
+								"Books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Books",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": \"1682c083-66ec-78d3-a395-cc607ff29dc1\",\n  \"createAt\": \"1948-08-25T07:54:13.131Z\",\n  \"createBy\": \"vol\",\n  \"deleteAt\": \"1944-04-30T21:39:25.754Z\",\n  \"deleteBy\": \"et voluptate\",\n  \"isDelete\": true,\n  \"myProperty1\": \"ad in ea sunt\",\n  \"myProperty2\": \"exercitation amet\",\n  \"myProperty3\": \"minim sint anim dolor sit\",\n  \"myProperty4\": \"commodo laborum\"\n },\n {\n  \"id\": \"a8a70cea-6d56-74c5-620d-e93ab4832f68\",\n  \"createAt\": \"1950-08-02T15:58:45.728Z\",\n  \"createBy\": \"et\",\n  \"deleteAt\": \"1954-04-16T05:40:20.095Z\",\n  \"deleteBy\": \"in anim sint\",\n  \"isDelete\": false,\n  \"myProperty1\": \"sint\",\n  \"myProperty2\": \"cillum deserunt m\",\n  \"myProperty3\": \"minim\",\n  \"myProperty4\": \"Duis dolor\"\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "/api/Books",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"{{$randomBsNoun}} {{$randomAdjective}}\",\n  \"author\": \"{{$randomFullName}}\",\n  \"genre\": \"test\",\n  \"price\": {{$randomPrice}},\n  \"totalPages\": {{$randomInt}}\n}"
+						},
+						"url": {
+							"raw": "{{book-api}}/api/Books",
+							"host": [
+								"{{book-api}}"
+							],
+							"path": [
+								"api",
+								"Books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"2b21735b-6ba1-bc2a-ea17-de7345bb1094\",\n    \"createAt\": \"1972-09-12T13:40:39.094Z\",\n    \"createBy\": \"sed tempor\",\n    \"deleteAt\": \"1954-06-19T09:59:48.901Z\",\n    \"deleteBy\": \"culpa deserunt anim\",\n    \"isDelete\": true,\n    \"myProperty1\": \"tempor est labore sit\",\n    \"myProperty2\": \"aute nostrud eu ipsum cillum\",\n    \"myProperty3\": \"ut aliqua non Duis dolor\",\n    \"myProperty4\": \"ess\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Books",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": \"2b21735b-6ba1-bc2a-ea17-de7345bb1094\",\n \"createAt\": \"1972-09-12T13:40:39.094Z\",\n \"createBy\": \"sed tempor\",\n \"deleteAt\": \"1954-06-19T09:59:48.901Z\",\n \"deleteBy\": \"culpa deserunt anim\",\n \"isDelete\": true,\n \"myProperty1\": \"tempor est labore sit\",\n \"myProperty2\": \"aute nostrud eu ipsum cillum\",\n \"myProperty3\": \"ut aliqua non Duis dolor\",\n \"myProperty4\": \"ess\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "electronic_api",
+			"item": [
+				{
+					"name": "/api/Phones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{electronic-api}}/api/phones",
+							"host": [
+								"{{electronic-api}}"
+							],
+							"path": [
+								"api",
+								"phones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Phones",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"{{$randomWord}}\",\r\n    \"model\": \"{{$randomProductMaterial}} {{$randomWord}}\",\r\n    \"price\": {{$randomPrice}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{electronic-api}}/api/phones",
+							"host": [
+								"{{electronic-api}}"
+							],
+							"path": [
+								"api",
+								"phones"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fashion_api",
+			"item": [
+				{
+					"name": "/api/Fashion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fashion-api}}/api/fashion",
+							"host": [
+								"{{fashion-api}}"
+							],
+							"path": [
+								"api",
+								"fashion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/Fashion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"{{$randomWords}}\",\r\n  \"size\": \"{{$randomProductAdjective}}\",\r\n  \"brand\": \"{{$randomCompanyName}}\",\r\n  \"price\": {{$randomPrice}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{fashion-api}}/api/fashion",
+							"host": [
+								"{{fashion-api}}"
+							],
+							"path": [
+								"api",
+								"fashion"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gateway",
+			"item": [
+				{
+					"name": "test gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/get-books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"get-books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "fashion-api",
+			"value": "http://localhost:6001"
+		},
+		{
+			"key": "electronic-api",
+			"value": "http://localhost:6002"
+		},
+		{
+			"key": "book-api",
+			"value": "http://localhost:6003"
+		}
+	]
+}
